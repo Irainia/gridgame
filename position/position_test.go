@@ -56,7 +56,7 @@ func TestGetPositionNilInit(t *testing.T) {
 func TestGetPositionCorrectInit(t *testing.T) {
 	pos, errActual := position.NewPosition(0, 0)
 	if errActual != nil {
-		t.Errorf("error_test: %s", errActual.Error())
+		t.Errorf("test_error: %s", errActual.Error())
 		return
 	}
 	_, errActual = pos.GetPosition()
