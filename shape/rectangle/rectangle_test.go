@@ -1,9 +1,13 @@
-package shape
+package shape_test
 
-import "testing"
+import (
+	"testing"
+
+	shape "github.com/irainia/gridgame/shape/rectangle"
+)
 
 func TestNewRectangleRowIsNegative(t *testing.T) {
-	_, errActual := NewRectangle(-1, 1)
+	_, errActual := shape.NewRectangle(-1, 1)
 	errExpected := "row should be more than zero"
 
 	if errActual == nil {
@@ -17,7 +21,7 @@ func TestNewRectangleRowIsNegative(t *testing.T) {
 }
 
 func TestNewRectangleRowIsZero(t *testing.T) {
-	_, errActual := NewRectangle(0, 1)
+	_, errActual := shape.NewRectangle(0, 1)
 	errExpected := "row should be more than zero"
 
 	if errActual == nil {
@@ -31,7 +35,7 @@ func TestNewRectangleRowIsZero(t *testing.T) {
 }
 
 func TestNewRectangleColumnIsNegative(t *testing.T) {
-	_, errActual := NewRectangle(1, -1)
+	_, errActual := shape.NewRectangle(1, -1)
 	errExpected := "column should be more than zero"
 
 	if errActual == nil {
@@ -45,7 +49,7 @@ func TestNewRectangleColumnIsNegative(t *testing.T) {
 }
 
 func TestNewRectangleColumnIsZero(t *testing.T) {
-	_, errActual := NewRectangle(1, 0)
+	_, errActual := shape.NewRectangle(1, 0)
 	errExpected := "column should be more than zero"
 
 	if errActual == nil {
@@ -59,7 +63,7 @@ func TestNewRectangleColumnIsZero(t *testing.T) {
 }
 
 func TestOccupiedAreaNotInitialized(t *testing.T) {
-	rectangle := Rectangle{}
+	rectangle := shape.Rectangle{}
 	occupied := rectangle.GetOccupiedArea()
 	if occupied != nil {
 		t.Errorf("occupied should be nil")
@@ -67,7 +71,7 @@ func TestOccupiedAreaNotInitialized(t *testing.T) {
 }
 
 func TestCalculateAreaNotInitialized(t *testing.T) {
-	rectangle := Rectangle{}
+	rectangle := shape.Rectangle{}
 	area := rectangle.CalculateArea()
 	if area != -1 {
 		t.Errorf("area should be -1")
@@ -75,7 +79,7 @@ func TestCalculateAreaNotInitialized(t *testing.T) {
 }
 
 func TestGetSizeNotInitialized(t *testing.T) {
-	rectangle := Rectangle{}
+	rectangle := shape.Rectangle{}
 	row, column := rectangle.GetSize()
 
 	if !(row == -1 && column == -1) {
@@ -84,7 +88,7 @@ func TestGetSizeNotInitialized(t *testing.T) {
 }
 
 func TestNewRectangleCorrectlyInitialized(t *testing.T) {
-	_, err := NewRectangle(1, 1)
+	_, err := shape.NewRectangle(1, 1)
 	if err != nil {
 		t.Errorf("test_error: %s", err.Error())
 		return
@@ -92,7 +96,7 @@ func TestNewRectangleCorrectlyInitialized(t *testing.T) {
 }
 
 func TestGetSizeCorrectlyInitialized(t *testing.T) {
-	rect, err := NewRectangle(3, 3)
+	rect, err := shape.NewRectangle(3, 3)
 	if err != nil {
 		t.Errorf("test_error: %s", err.Error())
 		return
@@ -105,7 +109,7 @@ func TestGetSizeCorrectlyInitialized(t *testing.T) {
 }
 
 func TestGetOccupiedAreaCorrectlyInitialized(t *testing.T) {
-	rect, err := NewRectangle(3, 3)
+	rect, err := shape.NewRectangle(3, 3)
 	if err != nil {
 		t.Errorf("test_error: %s", err.Error())
 		return
@@ -131,7 +135,7 @@ func TestGetOccupiedAreaCorrectlyInitialized(t *testing.T) {
 }
 
 func TestCalculateAreaCorrectlyInitialized(t *testing.T) {
-	rect, err := NewRectangle(3, 3)
+	rect, err := shape.NewRectangle(3, 3)
 	if err != nil {
 		t.Errorf("test_error: %s", err.Error())
 		return

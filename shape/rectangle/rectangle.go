@@ -2,7 +2,7 @@ package shape
 
 import "errors"
 
-// Rectangle will manage area of the rectangle
+// Rectangle will save rectangle shape
 type Rectangle struct {
 	occupiedArea [][]bool
 	row, column  *int
