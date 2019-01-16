@@ -77,7 +77,7 @@ func generateLeftButtomTriangle(row, column int) [][]bool {
 	return output
 }
 
-func (t Triangle) reflectOnHorizontalAxis() error {
+func (t *Triangle) reflectOnHorizontalAxis() error {
 	occupied := t.occupiedArea
 	output := make([][]bool, *t.row)
 	for i := 0; i < *t.row; i++ {
@@ -89,11 +89,11 @@ func (t Triangle) reflectOnHorizontalAxis() error {
 		}
 	}
 
-	copy(t.occupiedArea, output)
+	t.occupiedArea = output
 	return nil
 }
 
-func (t Triangle) reflectOnVerticalAxis() error {
+func (t *Triangle) reflectOnVerticalAxis() error {
 	occupied := t.occupiedArea
 	output := make([][]bool, *t.row)
 	for i := 0; i < *t.row; i++ {
@@ -105,7 +105,7 @@ func (t Triangle) reflectOnVerticalAxis() error {
 		}
 	}
 
-	copy(t.occupiedArea, output)
+	t.occupiedArea = output
 	return nil
 }
 

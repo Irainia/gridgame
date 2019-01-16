@@ -14,9 +14,10 @@ func NewRightButtomTriangle(row, column int) (*Triangle, error) {
 	}
 
 	output := Triangle{}
+	output.occupiedArea = generateLeftButtomTriangle(row, column)
+	row, column = len(output.occupiedArea), len(output.occupiedArea[0])
 	output.row = &row
 	output.column = &column
-	output.occupiedArea = generateLeftButtomTriangle(row, column)
 	output.reflectOnVerticalAxis()
 
 	return &output, nil

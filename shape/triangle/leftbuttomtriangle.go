@@ -1,6 +1,8 @@
 package shape
 
-import "errors"
+import (
+	"errors"
+)
 
 // NewLeftButtomTriangle will create new left triangle
 func NewLeftButtomTriangle(row, column int) (*Triangle, error) {
@@ -12,9 +14,10 @@ func NewLeftButtomTriangle(row, column int) (*Triangle, error) {
 	}
 
 	output := Triangle{}
+	output.occupiedArea = generateLeftButtomTriangle(row, column)
+	row, column = len(output.occupiedArea), len(output.occupiedArea[0])
 	output.row = &row
 	output.column = &column
-	output.occupiedArea = generateLeftButtomTriangle(row, column)
 
 	return &output, nil
 }

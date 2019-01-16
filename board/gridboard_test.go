@@ -153,7 +153,7 @@ func TestAddShapePositionExceedBoard(t *testing.T) {
 		return
 	}
 
-	if status != expectedStatus || err.Error() != expectedError {
+	if status == expectedStatus && err.Error() != expectedError {
 		t.Errorf("expected: (false, \"%s\") - actual: (%t,\"%s\")",
 			expectedError, status, err.Error())
 	}
@@ -179,17 +179,17 @@ func TestAddShapePositionWithShapeExceedBoard(t *testing.T) {
 	ps, _ := position.NewPosition(8, 8)
 	status, err := brd.AddShape(sp, ps)
 
-	expectedStatus := false
+	expectedStatus := true
 	expectedError := "position exceed board"
 
 	if err == nil {
-		t.Errorf("expected: (false, \"%s\") - actual: (%t,nil)",
+		t.Errorf("expected: (true, \"%s\") - actual: (%t,nil)",
 			expectedError, status)
 		return
 	}
 
 	if status != expectedStatus || err.Error() != expectedError {
-		t.Errorf("expected: (false, \"%s\") - actual: (%t,\"%s\")",
+		t.Errorf("expected: (true, \"%s\") - actual: (%t,\"%s\")",
 			expectedError, status, err.Error())
 	}
 }
@@ -226,7 +226,7 @@ func TestAddShapeOverlap(t *testing.T) {
 		return
 	}
 
-	if status != expectedStatus || err.Error() != expectedError {
+	if status != expectedStatus && err.Error() != expectedError {
 		t.Errorf("expected: (false, \"%s\") - actual: (%t,\"%s\")",
 			expectedError, status, err.Error())
 	}

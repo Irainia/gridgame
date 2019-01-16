@@ -48,32 +48,32 @@ func NewGameBoard(row, column int) (*GameBoard, error) {
 // AddShape will add shape to the board
 func (g *GameBoard) AddShape(sp shape.IShape, pos *position.Position) (bool, error) {
 	if g.row == nil || g.column == nil {
-		return false, errors.New("board is not initialized")
+		return true, errors.New("board is not initialized")
 	}
 	if sp == nil {
-		return false, errors.New("shape should not be a nil value")
+		return true, errors.New("shape should not be a nil value")
 	}
 	if pos == nil {
-		return false, errors.New("position should not be a nil value")
+		return true, errors.New("position should not be a nil value")
 	}
 
 	posCoordinate, err := pos.GetPosition()
 	if err != nil {
-		return false, errors.New("position is not initialized")
+		return true, errors.New("position is not initialized")
 	}
 
 	if posCoordinate[0] >= *g.row || posCoordinate[1] >= *g.column {
-		return false, errors.New("position exceed board")
+		return true, errors.New("position exceed board")
 	}
 
 	spRow, spColumn := sp.GetSize()
 	if spRow == -1 || spColumn == -1 {
-		return false, errors.New("shape is not initialized")
+		return true, errors.New("shape is not initialized")
 	}
 
 	if posCoordinate[0]+spRow-1 >= *g.row ||
 		posCoordinate[1]+spColumn-1 >= *g.column {
-		return false, errors.New("position exceed board")
+		return true, errors.New("position exceed board")
 	}
 
 	spOccupied := sp.GetOccupiedArea()
