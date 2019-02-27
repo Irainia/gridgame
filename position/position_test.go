@@ -3,7 +3,7 @@ package position_test
 import (
 	"testing"
 
-	"github.com/irainia/gridgame/position"
+	"github.com/Irainia/gridgame/position"
 )
 
 func TestNewPositionRowLessThanZero(t *testing.T) {

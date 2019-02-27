@@ -3,19 +3,21 @@ package util
 import (
 	"math/rand"
 
-	"github.com/irainia/gridgame/shape"
-	rectangle "github.com/irainia/gridgame/shape/rectangle"
-	triangle "github.com/irainia/gridgame/shape/triangle"
-	"github.com/irainia/gridgame/util"
+	"github.com/Irainia/gridgame/shape/circle"
+
+	"github.com/Irainia/gridgame/shape"
+	rectangle "github.com/Irainia/gridgame/shape/rectangle"
+	triangle "github.com/Irainia/gridgame/shape/triangle"
+	"github.com/Irainia/gridgame/util"
 )
 
 // GetRandomShape will generate random shape with random size
 func GetRandomShape(maxRow, maxColumn int) shape.IShape {
 	randomNumber := rand.Intn(util.MaxByte)
-	minRow, minColumn := 2, 2
+	minRow, minColumn := 4, 4
 	randRow, randColumn := rand.Intn(maxRow-minRow+1)+minRow,
 		rand.Intn(maxColumn-minColumn+1)+minColumn
-	switch randomNumber % 5 {
+	switch randomNumber % 6 {
 	case 0:
 		// rectangle
 		rect, _ := rectangle.NewRectangle(randRow, randColumn)
@@ -36,6 +38,10 @@ func GetRandomShape(maxRow, maxColumn int) shape.IShape {
 		// right top triangle
 		tri, _ := triangle.NewRightTopTriangle(randRow, randColumn)
 		return tri
+	case 5:
+		// circle
+		cir, _ := circle.NewCircle(randRow)
+		return cir
 	}
 
 	return nil

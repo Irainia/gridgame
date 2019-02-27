@@ -3,7 +3,7 @@ package util
 import (
 	"errors"
 
-	"github.com/irainia/gridgame/util"
+	"github.com/Irainia/gridgame/util"
 )
 
 // DecryptString will decrypt string

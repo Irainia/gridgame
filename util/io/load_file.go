@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 
-	util "github.com/irainia/gridgame/util/endec"
+	util "github.com/Irainia/gridgame/util/endec"
 )
 
 // LoadScore will load score

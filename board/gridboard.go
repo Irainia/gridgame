@@ -3,8 +3,8 @@ package board
 import (
 	"errors"
 
-	"github.com/irainia/gridgame/position"
-	"github.com/irainia/gridgame/shape"
+	"github.com/Irainia/gridgame/position"
+	"github.com/Irainia/gridgame/shape"
 )
 
 // EDoubleDirection will direct doubling the board

@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/irainia/gridgame/board"
-	"github.com/irainia/gridgame/position"
-	"github.com/irainia/gridgame/shape"
-	"github.com/irainia/gridgame/util"
-	etcUtil "github.com/irainia/gridgame/util/etc"
-	ioUtil "github.com/irainia/gridgame/util/io"
+	"github.com/Irainia/gridgame/board"
+	"github.com/Irainia/gridgame/position"
+	"github.com/Irainia/gridgame/shape"
+	"github.com/Irainia/gridgame/util"
+	etcUtil "github.com/Irainia/gridgame/util/etc"
+	ioUtil "github.com/Irainia/gridgame/util/io"
 )
 
 type concmessage struct {

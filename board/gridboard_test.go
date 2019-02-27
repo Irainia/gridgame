@@ -3,10 +3,10 @@ package board_test
 import (
 	"testing"
 
-	"github.com/irainia/gridgame/board"
-	"github.com/irainia/gridgame/position"
-	rectangle "github.com/irainia/gridgame/shape/rectangle"
-	triangle "github.com/irainia/gridgame/shape/triangle"
+	"github.com/Irainia/gridgame/board"
+	"github.com/Irainia/gridgame/position"
+	rectangle "github.com/Irainia/gridgame/shape/rectangle"
+	triangle "github.com/Irainia/gridgame/shape/triangle"
 )
 
 func TestNewGameBoardRowIsNegative(t *testing.T) {

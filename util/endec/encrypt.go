@@ -4,7 +4,7 @@ import (
 	"errors"
 	"math/rand"
 
-	"github.com/irainia/gridgame/util"
+	"github.com/Irainia/gridgame/util"
 )
 
 // EncryptString will encrypt string

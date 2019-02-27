@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	endecUtil "github.com/irainia/gridgame/util/endec"
+	endecUtil "github.com/Irainia/gridgame/util/endec"
 )
 
 // SaveScore will save score

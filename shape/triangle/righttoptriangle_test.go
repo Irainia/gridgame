@@ -3,7 +3,7 @@ package shape_test
 import (
 	"testing"
 
-	shape "github.com/irainia/gridgame/shape/triangle"
+	shape "github.com/Irainia/gridgame/shape/triangle"
 )
 
 func TestRightTopTriangleRowIsNegative(t *testing.T) {
